@@ -50,16 +50,16 @@ public final class FileFool implements
 			throw new IllegalArgumentException( "Argument path must be non-null." );
 		}
 		if ( !path.isAbsolute( ) ) {
-			throw new IllegalArgumentException( "Argument path must be absolute." );
+			throw new IllegalArgumentException( "Argument path must be absolute: " + path.toString( ) );
 		}
 		Path the_path = path.toAbsolutePath( ).normalize( );
 		if ( !Files.exists( the_path ) ) {
 			throw new IllegalArgumentException(
-					"Argument path identifies no existing directory." );
+					"Argument path identifies no existing directory: " + the_path.toString( ) );
 		}
 		if ( !Files.isDirectory( the_path ) ) {
 			throw new IllegalArgumentException(
-					"Argument path identifies a file that is not a directory." );
+					"Argument path identifies a file that is not a directory: " + the_path.toString( ) );
 		}
 		return new FileFool( the_path, read_only );
 	}
@@ -70,7 +70,7 @@ public final class FileFool implements
 	public static FileFoolReader r( ) {
 		return internalConstructor( Paths.get( "/" ), true );
 	}
-	
+
 	@Deprecated
 	public static FileFool nu( Path path ) {
 		return internalConstructor( path, false );
@@ -220,4 +220,5 @@ public final class FileFool implements
 		}
 		return collected;
 	}
+
 }

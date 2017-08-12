@@ -30,4 +30,5 @@ public interface FileFoolWriter {
 	void delete( Path path );
 
 	FileFoolWriterElement open( Path path );
+
 }
