@@ -19,9 +19,9 @@ package org.github.evenjn.file;
 
 import java.io.InputStream;
 
-import org.github.evenjn.yarn.Hook;
+import org.github.evenjn.yarn.Rook;
 
 public interface FileFoolReaderElement {
 
-	InputStream read( Hook hook );
+	InputStream read( Rook rook );
 }

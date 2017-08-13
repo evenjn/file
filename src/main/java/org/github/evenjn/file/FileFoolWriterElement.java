@@ -19,9 +19,9 @@ package org.github.evenjn.file;
 
 import java.io.OutputStream;
 
-import org.github.evenjn.yarn.Hook;
+import org.github.evenjn.yarn.Rook;
 
 public interface FileFoolWriterElement {
 
-	OutputStream write( Hook hook );
+	OutputStream write( Rook rook );
 }

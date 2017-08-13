@@ -23,7 +23,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import org.github.evenjn.yarn.Hook;
+import org.github.evenjn.yarn.Rook;
 
 public class FileFoolElement implements
 		FileFoolReaderElement,
@@ -38,23 +38,23 @@ public class FileFoolElement implements
 
 	Path path;
 
-	public InputStream read( Hook hook ) {
+	public InputStream read( Rook rook ) {
 		try {
-			return hook.hook( Files.newInputStream( path ) );
+			return rook.hook( Files.newInputStream( path ) );
 		}
 		catch ( IOException e ) {
 			throw new RuntimeException( e );
 		}
 	}
 
-	public OutputStream write( Hook hook ) {
+	public OutputStream write( Rook rook ) {
 		if ( read_only ) {
 			throw new IllegalStateException(
 					"You don't have permission to write on this file: "
 							+ path.toString( ) );
 		}
 		try {
-			return hook.hook( Files.newOutputStream( path ) );
+			return rook.hook( Files.newOutputStream( path ) );
 		}
 		catch ( IOException e ) {
 			throw new RuntimeException( e );
