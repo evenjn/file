@@ -120,6 +120,14 @@ public final class FileFool implements
 		}
 		return the_path;
 	}
+	
+	public Path normalizedAbsolute(Path path) {
+		return resolve( path );
+	}
+	
+	public Path normalizedRelative(Path path) {
+		return root.relativize( path );
+	}
 
 	/*
 	 * Returns the newly-created file's relative path with respect to the root of
@@ -146,7 +154,7 @@ public final class FileFool implements
 		catch ( IOException e ) {
 			throw new RuntimeException( e );
 		}
-		return root.relativize( the_path );
+		return normalizedRelative( the_path );
 	}
 
 	private void internalDelete( Path path ) {

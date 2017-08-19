@@ -31,4 +31,8 @@ public interface FileFoolWriter {
 
 	FileFoolWriterElement open( Path path );
 
+	Path normalizedAbsolute( Path path );
+
+	Path normalizedRelative( Path path );
+
 }

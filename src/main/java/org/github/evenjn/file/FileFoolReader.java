@@ -28,4 +28,8 @@ public interface FileFoolReader {
 	FileFoolReaderElement open( Path path );
 
 	Iterable<Path> find( String glob_pattern );
+
+	Path normalizedAbsolute( Path path );
+
+	Path normalizedRelative( Path path );
 }
