@@ -19,7 +19,7 @@ package org.github.evenjn.file;
 
 import java.io.OutputStream;
 
-import org.github.evenjn.yarn.Rook;
+import org.github.evenjn.lang.Rook;
 
 public interface FileFoolWriterElement {
 

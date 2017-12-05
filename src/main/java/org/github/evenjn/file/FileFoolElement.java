@@ -23,7 +23,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import org.github.evenjn.yarn.Rook;
+import org.github.evenjn.lang.Rook;
 
 public class FileFoolElement implements
 		FileFoolReaderElement,
